@@ -6,14 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dog Roboの愉快な1日</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@2.7.0/dist/vue-router.min.js"></script>
 </head>
 <body>
-<div class="wrapper">
- <header class="page-header">
+<div class="wrapper" id="wrapp-page">
+<header class="page-header">
 <img class="page-header__logo" src="images/logo.png" alt="Dog Robo logo">
-<h1 class="heading"><img class="heading__image"  src="images/heading1.png" alt="Dog Roboの愉快な1日"></h1>
-<img class="page-header__background-image" src="images/header_back.png" alt="朝">
- </header>
+<h1 class="heading"><img class="heading__image" src="images/heading1.png" alt="Dog Roboの愉快な1日"></h1>
+<page-header class="page-header__background-image">
+    <slot></slot>
+</page-header>
+</header>
 <main>
 <section class="about">
 <h2 class="heading-secondary">我輩は犬ロボットである</h2>
@@ -41,5 +45,6 @@
 <small class="page-footer__copyright">&copy; 2018 IT工房.</small>
 </footer>
 </div>
+<script src="app.js"></script>
 </body>
 </html>
