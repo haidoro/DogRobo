@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dog Roboの愉快な1日</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@2.4.2/dist/vue.min.js"></script>
     <script src="https://unpkg.com/vue-router@2.7.0/dist/vue-router.min.js"></script>
 </head>
 <body>
@@ -17,6 +17,11 @@
 <page-header class="page-header__background-image">
     <slot></slot>
 </page-header>
+<nav>
+    <router-link to="/top">Top Page</router-link>
+    <router-link to="/users">Users Page</router-link>
+</nav>
+    <router-view></router-view>
 </header>
 <main>
 <section class="about">
