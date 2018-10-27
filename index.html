@@ -11,16 +11,30 @@
 </head>
 <body>
 <div class="wrapper" id="wrapp-page">
+    <div class="navigation">
+        <div for="navi-toggle" class="navigation__button">
+            <span class="navigation__icon">&nbsp;</span>
+        </div>
+        <nav class="navigation__nav">
+            <ul class="navigation__list">
+                <li class="navigation__item">
+                    <router-link to="/top" class="navigation__item">Top Page</router-link>
+                </li>
+                <li class="navigation__item"></li>
+                <router-link to="/users" class="navigation__item">Users Page</router-link>
+                </li>
+                <li class="navigation__item">Link Page</li>
+                <li class="navigation__item">Link Page</li>
+                <li class="navigation__item">Link Page</li>
+            </ul>
+        </nav>
+    </div>
 <header class="page-header">
 <img class="page-header__logo" src="images/logo.png" alt="Dog Robo logo">
 <h1 class="heading"><img class="heading__image" src="images/heading1.png" alt="Dog Roboの愉快な1日"></h1>
 <page-header class="page-header__background-image">
     <slot></slot>
 </page-header>
-<nav>
-    <router-link to="/top">Top Page</router-link>
-    <router-link to="/users">Users Page</router-link>
-</nav>
 </header>
 <router-view></router-view>
 <script type="text/x-template" id="top">
