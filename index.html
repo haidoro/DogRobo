@@ -12,15 +12,15 @@
 <body>
 <div class="wrapper" id="wrapp-page">
     <div class="navigation">
-        <div for="navi-toggle" class="navigation__button">
+        <div v-on:click="naviButton" class="navigation__button" v-bind:class="isOpen ? '' : btnClass">
             <span class="navigation__icon">&nbsp;</span>
         </div>
-        <nav class="navigation__nav">
+        <nav class="navigation__nav" v-bind:class="isOpen ? openClass : ''">
             <ul class="navigation__list">
-                <li class="navigation__item">
-                    <router-link to="/top" class="navigation__item">Top Page</router-link>
+                <li class="navigation__item" v-on:click="naviButton">
+                    <router-link to="/top" class="navigation__item" v-bind:class="isOpen ? openClass : ''" >Top Page</router-link>
                 </li>
-                <li class="navigation__item"></li>
+                <li class="navigation__item" v-on:click="naviButton">
                 <router-link to="/users" class="navigation__item">Users Page</router-link>
                 </li>
                 <li class="navigation__item">Link Page</li>

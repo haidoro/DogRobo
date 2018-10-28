@@ -25,18 +25,15 @@ var router = new VueRouter({
 
 //コンポーネント定義
 var pageHeader =
-    `<div>
+`<div>
 <slot>
 <img v-bind:src = "srcImg" alt="時間帯">
 </slot>
 </div>`
 
 Vue.component('page-header', {
-    props: {
-        today: {
-            type: String,
-            isRequired: true
-        }
+    data: function () {
+        return today = new Date();
     },
     computed: {
         srcImg: function () {
@@ -58,7 +55,18 @@ Vue.component('page-header', {
 
 var app = new Vue({
     router: router,
-    data: function () {
-        return today = new Date();       
+    data: {
+        openClass:{
+            open:true
+        },
+        btnClass:{
+            openBtn:true
+        },
+        isOpen:true
+    },
+    methods:{
+        naviButton:function(){
+            this.isOpen = this.isOpen ? false : true 
+        }
     }
 }).$mount('#wrapp-page')
